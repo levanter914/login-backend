@@ -3,12 +3,18 @@
 package model
 
 type AuthPayload struct {
-	Token   string  `json:"token"`
-	Message *string `json:"message,omitempty"`
+	Token string `json:"token"`
+	User  *User  `json:"user"`
 }
 
 type Mutation struct {
 }
 
 type Query struct {
+}
+
+type User struct {
+	ID    string  `json:"id"`
+	Email string  `json:"email"`
+	Name  *string `json:"name,omitempty"`
 }

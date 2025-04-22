@@ -1,16 +1,18 @@
-# GraphQL schema example
-#
-# https://gqlgen.com/getting-started/
-
-type AuthPayload {
-  token: String!
-  message: String
+type Query {
+  me: User!
 }
 
 type Mutation {
-  login(email:String!, passoword: String!) : AuthPayload!
+  login(email: String!, password: String!): AuthPayload!
 }
 
-type Query {
-  status: String!
+type User {
+  id: ID!
+  email: String!
+  name: String
+}
+
+type AuthPayload {
+  token: String!
+  user: User!
 }
